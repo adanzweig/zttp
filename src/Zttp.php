@@ -277,7 +277,12 @@ class ZttpResponse
         return (string) $this->response->getBody();
     }
 
-    function json()
+    function getJson()
+    {
+        return json_decode($this->response->getBody());
+    }
+    
+    function getArray()
     {
         return json_decode($this->response->getBody(), true);
     }
